@@ -157,8 +157,8 @@
   /* shopping car */
 
   .product-detail {
-    width: 360px;
-    padding: 0 24px;
+    width: 380px;
+    padding:10px 24px;
     box-sizing: border-box;
     position: absolute;
     right: 0;
@@ -281,6 +281,7 @@
     padding-bottom: 24px;
     position: absolute;
     right: 0;
+    background: var(--white);
   }
   .product-detail-close {
     background: var(--white);
