@@ -67,12 +67,12 @@ productList.push({
 });
 productList.push({
     name: 'E-book',
-    price: 80,
+    price: 85,
     image: 'https://images.pexels.com/photos/3806168/pexels-photo-3806168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 });
 productList.push({
     name: 'Apple Pencil',
-    price: 80,
+    price: 40,
     image: 'https://images.pexels.com/photos/768472/pexels-photo-768472.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 });
 
