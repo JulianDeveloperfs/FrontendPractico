@@ -46,42 +46,41 @@ function ClosedProductDetailAside() {
 
 const productList = [];
 productList.push({
-    name: 'Cargador',
-    price: 120,
+    name: 'Power Adapter',
+    price: "$120",
     image: 'https://images.pexels.com/photos/14438774/pexels-photo-14438774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 });
 productList.push({
     name: 'Magsafe',
-    price: 100,
+    price: "$100",
     image: 'https://images.pexels.com/photos/7742585/pexels-photo-7742585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 });
 productList.push({
     name: 'Airpods',
-    price: 80,
+    price: "$80",
     image: 'https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=1600',
 });
 productList.push({
     name: 'PowerBank',
-    price: 60,
+    price: "$60",
     image: 'https://images.pexels.com/photos/11031423/pexels-photo-11031423.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 });
 productList.push({
     name: 'E-book',
-    price: 85,
+    price: "$85",
     image: 'https://images.pexels.com/photos/3806168/pexels-photo-3806168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 });
 productList.push({
     name: 'Apple Pencil',
-    price: 40,
+    price: "$40",
     image: 'https://images.pexels.com/photos/768472/pexels-photo-768472.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 });
 
-
-for (product of productList){
+function renderAside (arr){
+    for (const product of productList){
     const productCard = document.createElement('div')
     productCard.classList.add ('product-card');
     productCard.addEventListener("click",openProductDetailAside);
-
 
     const productImg = document.createElement('img');
     productImg.setAttribute('src', product.image);
@@ -107,6 +106,95 @@ for (product of productList){
 
     productCard.append(productImg,productInfo);
     cardsContainer.appendChild(productCard);
-
-
 }  
+}
+
+renderAside (productList)
+
+
+/*  
+const renderProducts = [];
+
+renderProducts.push({
+    name: 'Power Adapter',
+    price: "$120",
+    image: 'https://images.pexels.com/photos/14438774/pexels-photo-14438774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem autem, suscipit qui ipsa eligendi."
+});
+renderProducts.push({
+    name: 'Magsafe',
+    price: "$100",
+    image: 'https://images.pexels.com/photos/7742585/pexels-photo-7742585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem autem, suscipit qui ipsa eligendi."
+});
+renderProducts.push({
+    name: 'Airpods',
+    price: "$80",
+    image: 'https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem autem, suscipit qui ipsa eligendi."
+});
+renderProducts.push({
+    name: 'PowerBank',
+    price: "$60",
+    image: 'https://images.pexels.com/photos/11031423/pexels-photo-11031423.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem autem, suscipit qui ipsa eligendi."
+});
+renderProducts.push({
+    name: 'E-book',
+    price: "$85",
+    image: 'https://images.pexels.com/photos/3806168/pexels-photo-3806168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem autem, suscipit qui ipsa eligendi."
+});
+renderProducts.push({
+    name: 'Apple Pencil',
+    price: "$40",
+    image: 'https://images.pexels.com/photos/768472/pexels-photo-768472.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem autem, suscipit qui ipsa eligendi."
+});
+<div class="product-detail-close">
+      <img src="./icons/icon_close.png" alt="close">
+    </div>
+    <img src="https://images.pexels.com/photos/14438774/pexels-photo-14438774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="bike">
+    <div class="product-info-second">
+      <p>$120</p>
+      <p>Power adapter</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem autem, suscipit qui ipsa eligendi.</p>
+      <button class="primary-button add-to-cart-button">
+        <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
+        Add to cart
+      </button>
+    </div>
+
+ 
+
+
+for (render of renderProducts){
+    const productDetail = document.createElement("div");
+    productDetail.classList.add ("product-detail-close");
+
+    const renderClose = document.createElement('img');
+    renderClose.setAttribute("src","./icons/icon_close.png");
+
+    const productInfoSecond = document.createElement("div");
+    productInfoSecond.classList.add ("product-info-second");
+
+    const productPriceSecond = document.createElement('p');
+    productPriceSecond.innerText = render.price;
+    const productNameSecond = document.createElement('p');
+    productNameSecond.innerText = render.name;
+    const productDesSecond = document.createElement('p');
+    productDesSecond.innerText = render.description;
+
+    const buttonRender = document.createElement("button");
+    buttonRender.classList.add ("primary-button", "add-to-cart-button");
+    const renderCart = document.createElement('img');
+    renderCart.setAttribute("src","./icons/bt_add_to_cart.svg");
+
+    buttonRender.appendChild(renderCart);
+    productInfoSecond.append(productPriceSecond,productNameSecond,productDesSecond);
+    productDetail.appendChild(renderClose);
+
+    productDetailContainer.appendChild(productDetail);
+}
+
+   */ 

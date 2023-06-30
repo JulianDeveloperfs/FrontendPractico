@@ -238,6 +238,7 @@
     grid-template-columns: repeat(auto-fill, 240px);
     gap: 26px;
     margin-top: 20px;
+    margin-bottom: 20px;
     place-content: center;
   }
   .product-card {
@@ -346,6 +347,12 @@
     justify-content: center;
   }
 
+  /* Footer */ 
+
+  footer {
+  display: flex;
+  background: #ACD9B2;}
+  
   @media (max-width: 640px) {
     .menu {
       display: block;
